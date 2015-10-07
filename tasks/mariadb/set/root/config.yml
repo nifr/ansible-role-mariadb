@@ -1,0 +1,15 @@
+---
+
+- name: "mariadb:set:root:config"
+  sudo: yes
+  ini_file:
+    backup=no
+    state=present
+    dest="~/.my.cnf"
+    section="client"
+    option="{{ item.keys().0 }}"
+    value="{{item[item.keys().0]}}"
+  with_items:
+    - user: root
+    - password: root
+

@@ -1,0 +1,9 @@
+---
+
+- name: 'mariadb:add:repository | Add the mariadb repository'
+  apt_repository:
+    repo:         'deb {{ item.mirror }}/mariadb/repo/{{ item.version }}/{{ ansible_distribution|lower }} {{ ansible_distribution_release|lower }} main'
+    update_cache: yes
+    state:        present
+  with_items:
+    - '{ "mirror": "{{ mariadb.mirror }}", "version": "{{ mariadb.version }}" }'

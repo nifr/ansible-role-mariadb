@@ -1,0 +1,9 @@
+---
+
+- name: 'mariadb:service:start | start mariadb service'
+  service:
+    name:    '{{ item.service }}'
+    state:   started
+    enabled: yes
+  with_items:
+    - '{"service": "mysql"}'

@@ -1,0 +1,23 @@
+---
+
+- include: "mariadb/apt/add/key.yml"
+  tags:    [mariadb, apt, add, key]
+
+- include: "mariadb/apt/add/repository.yml"
+  tags:    [mariadb, apt, add, repository]
+
+- include: "mariadb/apt/install/prerequisites.yml"
+  tags:    [mariadb, apt, install, prerequisites]
+
+- include: "mariadb/apt/install/packages.yml"
+  tags:    [mariadb, apt, install, package]
+
+- include: "mariadb/create/databases.yml"
+  tags:    [mariadb, set, databases]
+
+- include: "mariadb/set/users.yml"
+  tags:    [mariadb, set, users]
+
+- include: "mariadb/set/root/config.yml"
+  tags:    [mariadb, set, root, config]
+

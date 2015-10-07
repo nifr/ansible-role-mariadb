@@ -1,0 +1,11 @@
+---
+
+- name: 'mariadb:install:packages | Ensure the mariadb packages are installed'
+  apt:
+    pkg:              "{{ item.package }}"
+    state:            latest
+    update_cache:     yes
+    cache_valid_time: 600
+  with_items:
+    - { "package": "mariadb-server" }
+    - { "package": "mariadb-client" }

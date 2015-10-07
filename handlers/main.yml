@@ -1,0 +1,4 @@
+---
+
+- include: mariadb/service/start.yml
+  tags: [service, start]

@@ -1,0 +1,16 @@
+---
+mariadb:
+  gpg_key: '0xcbcb082a1bb943db'
+  mirror:  'http://mirror.netcologne.de'
+  version: '5.5'
+  databases:
+    - symfony
+  users:
+    root:
+      host:     'localhost'
+      password: 'root'
+      priv:     '*.*:ALL,GRANT'
+    symfony:
+      host:     'localhost'
+      password: 'symfony'
+      priv:     'symfony.*:ALL,GRANT'

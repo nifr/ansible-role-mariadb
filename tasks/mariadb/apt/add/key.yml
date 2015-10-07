@@ -1,0 +1,8 @@
+---
+
+- name: 'mariadb:add:apt:key | Add the mariadb GPP key'
+  apt_key:
+    url:   'http://keyserver.ubuntu.com/pks/lookup?op=get&fingerprint=on&search={{ item.gpg_key }}'
+    state: present
+  with_items:
+    - '{ "gpg_key": "{{ mariadb.gpg_key }}" }'

@@ -1,0 +1,11 @@
+---
+
+- name: 'mariadb:install:prerequisites | Ensure mariadb python prerequisites'
+  apt:
+    pkg:              '{{ item.package }}'
+    state:            latest
+    update_cache:     yes
+    cache_valid_time: 600
+  with_items:
+    - { "package": "python-mysqldb" }
+    - { "package": "python-software-properties" }

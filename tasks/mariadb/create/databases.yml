@@ -1,0 +1,7 @@
+---
+
+- name: 'mariadb:create:databases | create databases'
+  mysql_db:
+    name:  '{{ item }}'
+    state: 'present'
+  with_items: mariadb.databases

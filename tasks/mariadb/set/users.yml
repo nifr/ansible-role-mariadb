@@ -1,0 +1,10 @@
+---
+
+- name: update mariadb root password for local root account
+  mysql_user:
+    name:     '{{ item.key }}'
+    host:     '{{ item.value.host }}'
+    password: '{{ item.value.password }}'
+    priv:     '{{ item.value.priv }}'
+    state:    present
+  with_dict: mariadb.users
